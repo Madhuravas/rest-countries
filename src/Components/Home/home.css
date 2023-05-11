@@ -1,0 +1,66 @@
+.home-card{
+    padding: 3rem 8rem 3rem 8rem;
+    min-height: 100vh;
+}
+.input-card{
+    height: 28px;
+    width: 18rem;
+    padding: .4rem;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+.input-container{
+    height: 40px;
+    width: 17rem;
+    box-shadow: 0 0 6px #888888;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px;
+}
+.input-scrollbar{
+    height: 2.4rem;
+    width: 11rem;
+    padding: .4rem;
+    box-shadow: 0 0 6px #888888;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    border-radius: 4px;
+}
+
+.search-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.countrys-card{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 9rem;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+@media screen and (max-width:600px) {
+    .home-card{
+        padding: 5rem;
+    }
+    .search-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    .input-container{
+        height: 42px;
+    }
+    .input-scrollbar{
+        width: 17rem;
+    }
+}

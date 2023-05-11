@@ -1,0 +1,10 @@
+.border-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 60px;
+    box-shadow: 0px 0 2px 1px gray;
+    border-radius: 2px;
+    margin: .7rem;
+}

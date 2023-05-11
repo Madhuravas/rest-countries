@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Header from './Components/Header/header';
+import Home from './Components/Home/home';
+import EachCountry from './Components/EachCountry/eachCountry';
+import ThemeContextProvider from "./Context/context";
+import NotFound from "./Components/NotFound/notFound";
+import { Component } from "react";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+class App extends Component{
+  render(){
+  return (
+    <BrowserRouter>
+      <ThemeContextProvider>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/:code" component={EachCountry} />
+          <Route component={NotFound} />
+          </Switch>
+      </ThemeContextProvider>
+    </BrowserRouter>
+  );
+  }
+}
 export default App;
+

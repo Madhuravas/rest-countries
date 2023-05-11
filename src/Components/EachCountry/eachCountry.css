@@ -1,0 +1,87 @@
+.arrow {
+    font-size: 18px;
+    margin-right: .8rem;
+}
+
+.back-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0 2px 1px gray;
+    height: 44px;
+    width: 150px;
+    border-radius: 2px;
+}
+
+.eachCountry-card {
+    padding: 4rem 6rem 4rem 6rem;
+    height: 90vh;
+}
+
+.country-flag-img {
+    height: 22rem;
+    width: 36rem;
+    margin-right: 2.5rem;
+}
+
+.each-country-details {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.each-country-text-details {
+    list-style-type: none;
+    padding-left: 0px;
+    display: flex;
+}
+
+.country-name {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.borders-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.each-detield-details {
+    margin-bottom: 8px;
+}
+
+.text-size {
+    font-size: 1.2rem;
+}
+
+.details-part-one {
+    margin-right: 4rem;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+@media screen and (max-width:650px) {
+    .eachCountry-card {
+        padding: 2rem;
+        height: 100vh;
+    }
+
+    .country-flag-img {
+        height: 15rem;
+        width: 100%;
+        margin-right: 2.5rem;
+    }
+
+    .each-country-details {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

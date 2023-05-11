@@ -1,0 +1,9 @@
+.notFound-image{
+    height: 90vh;
+    
+}
+.not-found-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

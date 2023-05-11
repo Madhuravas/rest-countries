@@ -1,0 +1,21 @@
+.darklight{
+    margin-right: .5rem;
+}
+.button{
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+}
+.navbar-card{
+    padding: .6rem 8rem .6rem 8rem;
+    box-shadow: 0px 1px 4px #888888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+@media screen and (max-width:600px){
+    .navbar-card{
+        padding: .1rem 1rem .1rem 1rem;
+    }
+}

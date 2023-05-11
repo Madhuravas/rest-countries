@@ -1,0 +1,34 @@
+.country-flag{
+    height: 220px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.country-card{
+    box-shadow: 0 0 6px #888888;
+    border-radius: 5px;
+    width: 25%;
+    text-decoration: none;
+}
+.country-details{
+    padding: 0 1rem 2rem 1rem;
+}
+.sub-heading{
+    font-weight: 600;
+}
+.details{
+    margin-bottom: 6px;
+    margin-top: 0px;
+    font-weight: 400;
+}
+/* .home-borders{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+@media screen and (max-width:650px) {
+    .country-card{
+        width: 100%;
+    }
+    
+}
