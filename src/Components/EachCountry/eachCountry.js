@@ -29,7 +29,6 @@ class EachCountry extends Component {
                 isError: false
             })
         } catch (err) {
-            console.log(err)
             this.setState({ eachCountryData: "", isLoading: false, isError: true })
         }
     }
@@ -99,10 +98,10 @@ class EachCountry extends Component {
                                     </Link>
 
                                     <div key={name} className="each-country-details">
-                                        <div>
+                                        <div className="flag-card">
                                             <img className="country-flag-img" src={flag} alt={`${name} flag`} />
                                         </div>
-                                        <div>
+                                        <div className="country-details-card">
                                             <h2>{name}</h2>
                                             <ul className="each-country-text-details">
                                                 <div className="details-part-one">
