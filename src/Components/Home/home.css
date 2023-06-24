@@ -48,19 +48,32 @@
     justify-content: center;
 }
 
+@media screen and (max-width:1450px){
+    .countrys-card{
+        column-gap: 5rem;
+    }
+}
+
 @media screen and (max-width:600px) {
     .home-card{
         padding: 5rem;
     }
     .search-container{
-        display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
+       display: none;
     }
     .input-container{
         height: 42px;
     }
     .input-scrollbar{
         width: 17rem;
+    }
+    .countrys-card{
+        column-gap: 0;
+    }
+}
+
+@media screen and (max-width:450px){
+    .home-card{
+        padding: 2rem;
     }
 }

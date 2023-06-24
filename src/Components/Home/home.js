@@ -45,7 +45,6 @@ class Home extends Component {
                     const { light, dark, isLightTheme } = value
                     const theme = isLightTheme ? light : dark
                     if (isLoading) {
-
                         return (<div style={{ background: theme.bg, color: theme.color, height: "100vh" }} className="loader-container">
                             <Bars type="ThreeDots" color="#0b69ff" height="50" width="50" />
                         </div>
@@ -60,7 +59,7 @@ class Home extends Component {
                             )
 
                             const searchBasedOnCountrys = searchBasedOnResign.filter(eachCountrysData =>
-                                eachCountrysData.name.toLowerCase().startsWith(countryInput.toLocaleLowerCase())
+                                eachCountrysData.name.common.toLowerCase().startsWith(countryInput.toLocaleLowerCase())
                             )
 
                             return (
@@ -80,7 +79,7 @@ class Home extends Component {
                                 <div className="countrys-card">
                                     {searchBasedOnCountrys.map(eachCountry => {
                                         return (
-                                            <Countries key={eachCountry.name} countryData={eachCountry} />
+                                            <Countries key={eachCountry.cca3} countryData={eachCountry} />
                                         )
                                     })}
                                 </div>

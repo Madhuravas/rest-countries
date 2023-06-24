@@ -17,10 +17,10 @@ class EachCountry extends Component {
         isError: false,
 
     }
-
+    
     async componentDidMount() {
         const { code } = this.props.match.params
-        
+    
         try {
             const data = await CountryAPI.getEachCountryDataByname(code)
             this.setState({
@@ -35,24 +35,23 @@ class EachCountry extends Component {
 
     async componentDidUpdate(prevProps) {
         if (prevProps.match.params.code !== this.props.match.params.code) {
+
             const { code } = this.props.match.params
             try {
-                const data = await CountryAPI.getEachCountryData(code)
+                const data = await CountryAPI.getEachCountryDataByname(code)
                 this.setState({
-                    eachCountryData: data,
+                    eachCountryData: data[0],
                     isLoading: false,
                     isError: false
                 })
             } catch (err) {
-                console.log(err)
                 this.setState({ eachCountryData: "", isLoading: false, isError: true })
             }
         }
     }
 
     render() {
-        const { eachCountryData, isLoading, isError } = this.state
-
+        const { eachCountryData, isLoading, isError } = this.state;
         return (<ThemeContext.Consumer>
             {(value) => {
                 const { light, dark, isLightTheme } = value
@@ -66,13 +65,19 @@ class EachCountry extends Component {
                         return (<NotFound />)
                     } else {
                         if (eachCountryData !== "") {
-                            const { name, flag, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = eachCountryData
-
-                            let allLanguages = languages.reduce((acc, eachLanguage) => {
-                                acc += eachLanguage.name + ' ,'
-                                return acc
-                            }, "")
-                            allLanguages = allLanguages.slice(0, allLanguages.length - 1)
+                            const { name, flags, population, region, subregion, capital, currencies, languages, borders } = eachCountryData;
+                            let langCodes = Object.keys(eachCountryData?.languages);
+                            let allCurrencies = "";
+                            let allLanguages = "";
+                            Object.keys(currencies).forEach(item =>{
+                                allCurrencies = allCurrencies + currencies[item].name + ", "
+                            });
+                            allCurrencies = allCurrencies.slice(0,-2);
+                            
+                            langCodes.forEach(item =>{
+                               allLanguages = allLanguages + languages[item] + ", "
+                            });
+                            allLanguages = allLanguages.slice(0, -2);
 
                             const bordersData = () => {
                                 if (borders === undefined) {
@@ -81,7 +86,7 @@ class EachCountry extends Component {
                                     return (
                                         <>
                                             {borders.map(eachBorder => {
-                                                return <Borders key={eachBorder} border={eachBorder} />
+                                                return <Borders key={eachBorder} border={eachBorder} code={eachCountryData.cca2}  />
                                             })}
                                         </>
                                     )
@@ -97,23 +102,21 @@ class EachCountry extends Component {
                                         </div>
                                     </Link>
 
-                                    <div key={name} className="each-country-details">
+                                    <div key={name.common} className="each-country-details">
                                         <div className="flag-card">
-                                            <img className="country-flag-img" src={flag} alt={`${name} flag`} />
+                                            <img className="country-flag-img" src={flags.svg} alt={flags.alt} />
                                         </div>
                                         <div className="country-details-card">
-                                            <h2>{name}</h2>
+                                            <h2>{name.official}</h2>
                                             <ul className="each-country-text-details">
                                                 <div className="details-part-one">
-                                                    <li className="each-detield-details"><span className="sub-heading text-size">Natvive name: </span>{nativeName}</li>
-                                                    <li className="each-detield-details"><span className="sub-heading text-size">Population: </span>{population}</li>
+                                                    <li className="each-detield-details"><span className="sub-heading text-size">Capital: </span>{capital}</li>
                                                     <li className="each-detield-details"><span className="sub-heading text-size">Region: </span>{region}</li>
                                                     <li className="each-detield-details"><span className="sub-heading text-size">Sub Region: </span>{subregion}</li>
-                                                    <li className="each-detield-details"><span className="sub-heading text-size">Capital: </span>{capital}</li>
                                                 </div>
                                                 <div>
-                                                    <li className="each-detield-details"><span className="sub-heading text-size">Top Level Domin: </span>{topLevelDomain[0]}</li>
-                                                    <li className="each-detield-details"><span className="sub-heading text-size">currencies: </span>{currencies[0].name}</li>
+                                                    <li className="each-detield-details"><span className="sub-heading text-size">Population: </span>{population}</li>
+                                                    <li className="each-detield-details"><span className="sub-heading text-size">currencies: </span>{allCurrencies}</li>
                                                     <li className="each-detield-details"><span className="sub-heading text-size">languages: </span>{allLanguages}</li>
                                                 </div>
                                             </ul>

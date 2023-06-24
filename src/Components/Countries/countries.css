@@ -26,6 +26,12 @@
     flex-wrap: wrap;
 } */
 
+@media screen and (max-width:950px){
+    .country-card{
+        width: 42%;
+    }
+}
+
 @media screen and (max-width:650px) {
     .country-card{
         width: 100%;
