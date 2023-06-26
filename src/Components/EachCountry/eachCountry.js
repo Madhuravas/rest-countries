@@ -98,7 +98,7 @@ class EachCountry extends Component {
                                     <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }}>
                                         <div className="back-card">
                                             <i className="arrow fa fa-arrow-left"></i>
-                                            <p>Back</p>
+                                            <p className="back-text">Back</p>
                                         </div>
                                     </Link>
 
@@ -126,8 +126,6 @@ class EachCountry extends Component {
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                             )
                         }

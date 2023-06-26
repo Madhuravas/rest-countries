@@ -11,6 +11,7 @@ import ThemeContextProvider from "./Context/context";
 import NotFound from "./Components/NotFound/notFound";
 import { Component } from "react";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component{
@@ -23,7 +24,7 @@ class App extends Component{
           <Route exact path="/" component={Home} />
           <Route exact path="/:code" component={EachCountry} />
           <Route component={NotFound} />
-          </Switch>
+        </Switch>
       </ThemeContextProvider>
     </BrowserRouter>
   );

@@ -13,9 +13,17 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gray;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 20px;
 }
 @media screen and (max-width:600px){
     .navbar-card{
         padding: .1rem 1rem .1rem 1rem;
     }
+}
+.header-text{
+    font-size: 26px;
+    font-weight: 700;
+    cursor: pointer;
 }
