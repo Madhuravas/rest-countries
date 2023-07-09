@@ -1,14 +1,20 @@
 .country-flag{
-    height: 220px;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    
+}
+.country-flag-card{
+    height: 220px;
 }
 .country-card{
     box-shadow: 0 0 6px #888888;
     border-radius: 5px;
     width: 25%;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+
 }
 .country-details{
     padding: 0 1rem 2rem 1rem;

@@ -81,7 +81,7 @@ class EachCountry extends Component {
 
                             const bordersData = () => {
                                 if (borders === undefined) {
-                                    return (<p> No borders</p>)
+                                    return (<p className="no-borders">No borders</p>)
                                 } else {
                                     return (
                                         <>

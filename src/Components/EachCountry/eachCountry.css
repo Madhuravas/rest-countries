@@ -11,7 +11,7 @@
     height: 44px;
     width: 150px;
     border-radius: 2px;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 .back-text{
    display: inline;
@@ -58,6 +58,9 @@
     flex-wrap: wrap;
 }
 
+.no-borders{
+    margin-top: 15px;
+}
 .each-detield-details {
     margin-bottom: 8px;
 }

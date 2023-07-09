@@ -1,5 +1,6 @@
 .home-card{
     padding: 3rem 8rem 3rem 8rem;
+    min-height: 100vh;
 }
 .input-card{
     height: 28px;
@@ -37,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 .countrys-card{
     margin-top: 2rem;
@@ -59,7 +60,9 @@
         padding: 5rem;
     }
     .search-container{
-       display: none;
+       flex-direction: column;
+       row-gap: 12px;
+       margin-top: 4rem;
     }
     .input-container{
         height: 42px;
