@@ -16,14 +16,30 @@
     position: fixed;
     width: 100%;
     margin-bottom: 20px;
+    height: 60px;
 }
 @media screen and (max-width:600px){
     .navbar-card{
         padding: .1rem 1rem .1rem 1rem;
+    }
+    .header-text-for-lpt{
+        display: none;
+    }
+    .header-text-for-mob{
+        display: block;
+    }
+}
+@media screen and (min-width:600px){
+    .header-text-for-lpt{
+        display: block;
+    }
+    .header-text-for-mob{
+        display: none;
     }
 }
 .header-text{
     font-size: 26px;
     font-weight: 700;
     cursor: pointer;
+    
 }

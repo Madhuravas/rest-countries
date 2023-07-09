@@ -28,9 +28,13 @@ class Header extends Component {
           return (
             <nav className="navbar-card" style={{ background: theme.bg, color: theme.color }}>
               <OverlayTrigger placement="bottom" overlay={renderTooltip}>
-                 <h3 className="header-text">Where is my World?</h3>
+                 <h3 className="header-text header-text-for-lpt">Where is my World?</h3>
               </OverlayTrigger>
-              <button style={{ color: theme.color }} className="button" onClick={onClickTheme}><i className="darklight fa fa-moon"></i>{themeText}</button>
+              <OverlayTrigger placement="bottom" overlay={renderTooltip}>
+                 <h3 className="header-text header-text-for-mob">my World?</h3>
+              </OverlayTrigger>
+              <button style={{ color: theme.color }} className="button header-text-for-lpt" onClick={onClickTheme}><i className="darklight fa fa-moon"></i>{themeText}</button>
+              <button style={{ color: theme.color }} className="button header-text-for-mob" onClick={onClickTheme}><i className="darklight fa fa-moon"></i></button>
             </nav>
           )
         }}
