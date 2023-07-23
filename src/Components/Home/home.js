@@ -62,6 +62,11 @@ class Home extends Component {
                                 eachCountrysData.name.common.toLowerCase().startsWith(countryInput.toLocaleLowerCase())
                             )
 
+                            let data = searchBasedOnCountrys.sort((a,b) =>{
+                                return (a.cca3 > b.cca3) ? 1 : ((b.cca3 > a.cca3) ? -1 : 0)
+                            })
+                            console.log(data)
+
                             return (
                             <div className="home-card" style={{ background: theme.bg, color: theme.color }}>
                                 <div className="search-container">
@@ -70,14 +75,14 @@ class Home extends Component {
                                         <input style={{ background: theme.bg, color: theme.color }} className="input-card" type="text" placeholder="Search for a country" onChange={this.searchBasedOnCountry} />
                                     </div>
                                     <select style={{ background: theme.bg, color: theme.color }} className="input-scrollbar" onChange={this.searchBasedOnRegion}>
-                                        <option>Search by region</option>
+                                        <option key='All'>All</option>
                                         {regions.map(region =>
                                             <option key={region}>{region}</option>
                                         )}
                                     </select>
                                 </div>
                                 <div className="countrys-card">
-                                    {searchBasedOnCountrys.map(eachCountry => {
+                                    {data.map(eachCountry => {
                                         return (
                                             <Countries key={eachCountry.cca3} countryData={eachCountry} />
                                         )
