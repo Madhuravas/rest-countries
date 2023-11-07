@@ -52,7 +52,7 @@ class Home extends Component {
 
                     } else {
 
-                        if (countriesData !== []) {
+                        if (countriesData.length > 0) {
 
                             const searchBasedOnResign =  regionInput === "All"? countriesData : countriesData.filter(eachCountryData =>
                                 eachCountryData.region.includes(regionInput)
